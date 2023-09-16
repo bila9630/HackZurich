@@ -9,5 +9,11 @@ export default function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
 ) {
-    res.status(200).json({ name: 'Testing api endpoint' })
+    try {
+        const bodyData = JSON.parse(req.body)
+        console.log(bodyData)
+        res.status(200).json({ name: 'Testing api endpoint' })
+    } catch (error) {
+        res.status(400).json({ name: 'Invalid JSON' })
+    }
 }
