@@ -31,7 +31,7 @@ const mockdata = [
     image: 'coffee.png',
   },
   {
-    title: '10% discount on your next tank refill',
+    title: '5% discount on your next tank refill',
     image: 'fuel.png',
   }
 ];

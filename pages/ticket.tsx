@@ -4,15 +4,27 @@ import { motion } from "framer-motion";
 import { useRouter } from 'next/router';
 import {
     Container, Title, Button, Center,
-    Space, Text, Image
+    Space, Image, Text
 } from '@mantine/core';
-import ScratchCard from "react-scratchcard-v2";
+import ScratchArea from 'react-scratch-area';
+
+
+
+
 
 const Ticket = () => {
     const router = useRouter()
     const [disabled, setDisabled] = useState(true);
     const [randomKey, setRandomKey] = useState('');
     const [randomValue, setRandomValue] = useState('');
+
+    const settings = {
+        width: 280,
+        height: 200,
+        canvas: "zone.jpg", //i.e #396, rgba(255,255,255,.3) or a image
+        finishPercent: 50,
+        onComplete: () => setDisabled(false)
+    };
 
     useEffect(() => {
         const rewards = {
@@ -42,15 +54,8 @@ const Ticket = () => {
                 <Space h={40} />
 
                 <Center>
-                    <ScratchCard
-                        width={280}
-                        height={200}
-                        image={"/zone.jpg"}
-                        finishPercent={50}
-                        onComplete={() => {
-                            setDisabled(false);
-                        }}
-                    >
+                    {/* Scratch area here */}
+                    <ScratchArea {...settings}>
                         <Image
                             src={`/${randomKey}.png`}
                             height={160}
@@ -58,7 +63,7 @@ const Ticket = () => {
                             fit="contain"
                         />
                         <Text align={"center"}>{randomValue}</Text>
-                    </ScratchCard>
+                    </ScratchArea>
                 </Center>
 
                 <Space h={50} />
