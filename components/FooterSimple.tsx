@@ -54,7 +54,7 @@ export function FooterSimple({ links }: FooterSimpleProps) {
     return (
         <div className={classes.footer}>
             <Container className={classes.inner}>
-                <Text>© 2023 EcoTrack - Smoother roads, greener tomorrow</Text>
+                <Text>© 2023 EcoTrack - Your commute, our commitment</Text>
                 <Group className={classes.links}>{items}</Group>
             </Container>
         </div>

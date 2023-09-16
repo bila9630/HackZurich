@@ -25,18 +25,17 @@ const Driving = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
         >
-
             <StatsRing data={[
                 {
                     "label": "Current driving speed",
-                    "stats": "45 km/h",
+                    "stats": "100 km/h",
                     "progress": 100,
                     "color": randomStatus,
                     "icon": "car"
                 },
                 {
                     "label": "Speed limit",
-                    "stats": "130 km/h",
+                    "stats": "120 km/h",
                     "progress": 100,
                     "color": randomStatus,
                     "icon": "alert"
