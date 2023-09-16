@@ -45,8 +45,8 @@ const Driving = () => {
                 <Space h={"xl"} />
                 <Center>
                     {randomStatus == "green" && <Text align="center">Keep the pace, there is no traffic jam ahead</Text>}
-                    {randomStatus == "yellow" && <Text align="center">Slow down, there is a chance of a traffic jam ahead</Text>}
-                    {randomStatus == "red" && <Text align="center">Slow down, there is a traffic jam ahead</Text>}
+                    {/* {randomStatus == "yellow" && <Text align="center">Slow down, there is a chance of a traffic jam ahead</Text>}
+                    {randomStatus == "red" && <Text align="center">Slow down, there is a traffic jam ahead</Text>} */}
                 </Center>
 
                 <Space h={"xl"} />
@@ -54,8 +54,8 @@ const Driving = () => {
 
                 <Center>
                     {randomStatus == "green" && <Lottie animationData={Green} style={style} />}
-                    {randomStatus == "yellow" && <Lottie animationData={Yellow} style={style} />}
-                    {randomStatus == "red" && <Lottie animationData={Red} style={style} />}
+                    {/* {randomStatus == "yellow" && <Lottie animationData={Yellow} style={style} />}
+                    {randomStatus == "red" && <Lottie animationData={Red} style={style} />} */}
                 </Center>
 
                 <Space h={"xl"} />
