@@ -116,10 +116,10 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
                         setActivePage("/")
                     }}
                 >
-                    <Text component="span" variant="gradient" gradient={{ from: "#FF0000", to: "#FF7878" }} inherit>
-                        Verkehrs
+                    <Text component="span" c={"#00BF63"} inherit>
+                        Eco
                     </Text>
-                    Sense
+                    Track
                 </Text>
                 <Group spacing={5} className={classes.links}>
                     {items}
