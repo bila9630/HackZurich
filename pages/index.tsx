@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useRouter } from 'next/router';
 import {
   Card, Container, Grid, Text, Title,
-  Image, Button, Space
+  Button, Space
 } from '@mantine/core'
 import React, { useContext } from 'react'
 import { DatabaseContext } from "../contexts/DatabaseContext";

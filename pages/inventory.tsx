@@ -5,9 +5,9 @@ import {
   Container, Title, Text,
   createStyles, SimpleGrid, Card,
   Image, AspectRatio, Center,
-  Button, Space
+  Button, Space, Modal
 } from '@mantine/core';
-
+import { useDisclosure } from '@mantine/hooks';
 
 const mockdata = [
   {
@@ -54,7 +54,7 @@ const useStyles = createStyles((theme) => ({
 
 const Inventory = () => {
   const { classes } = useStyles();
-  const [userFound, setUserFound] = useState(false);
+  const [opened, { open, close }] = useDisclosure(false);
 
   const cards = mockdata.map((article) => (
     <Card key={article.title} p="md" radius="md" component="a" href="#" withBorder shadow="sm" className={classes.card}>
@@ -77,7 +77,10 @@ const Inventory = () => {
       <Space h="md" />
 
       <Center>
-        <Button variant="light" fullWidth radius="md">
+        <Button
+          variant="light" fullWidth radius="md"
+          onClick={open}
+        >
           Redeem
         </Button>
       </Center>
@@ -91,6 +94,16 @@ const Inventory = () => {
       transition={{ duration: 0.8 }}
     >
       <Container mih={'80vh'} mt={'5vh'} mb={"5vh"}>
+        {/* Modal part */}
+        <Modal opened={opened} onClose={close} title="Your prize" centered>
+          <Image src={"rickroll.png"} alt="qr code to redeem prize" height={300} fit={"contain"} />
+          <Space h={"md"}/>
+          <Center>
+            <Text c={"dimmed"}>Code: 3FW23DH</Text>
+          </Center>
+        </Modal>
+
+        {/* Actual page part */}
         <Title order={2} mb={"lg"} align="center">Inventory</Title>
         <SimpleGrid cols={3} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
           {cards}

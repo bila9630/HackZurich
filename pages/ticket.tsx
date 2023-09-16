@@ -8,9 +8,6 @@ import {
 } from '@mantine/core';
 import ScratchCard from "react-scratchcard-v2";
 
-
-
-
 const Ticket = () => {
     const router = useRouter()
     const [disabled, setDisabled] = useState(true);
