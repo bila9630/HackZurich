@@ -27,7 +27,7 @@ export default function Home() {
       >
         <Title order={1} align="center" >Smoother roads, greener{" "}
           <Text component="span" variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }}>
-            Tomorrow
+            tomorrow
           </Text>
         </Title>
       </motion.div>

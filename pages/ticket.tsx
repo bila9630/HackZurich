@@ -50,7 +50,7 @@ const Ticket = () => {
                         width={280}
                         height={200}
                         image={"/zone.jpg"}
-                        finishPercent={60}
+                        finishPercent={50}
                         onComplete={() => {
                             setDisabled(false);
                         }}
