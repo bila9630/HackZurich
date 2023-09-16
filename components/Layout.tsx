@@ -10,13 +10,14 @@ const Layout = ({ children }: any) => {
                 label: "Homepage"
             },
             {
-                link: "/inventory",
-                label: "Inventory"
+                link: "/driving",
+                label: "Driving"
             },
             {
-                link: "/setting",
-                label: "Setting"
-            }]} />
+                link: "/inventory",
+                label: "Inventory"
+            }
+            ]} />
             <main>{children}</main>
             <FooterSimple links={[
                 {

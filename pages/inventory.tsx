@@ -15,21 +15,7 @@ const Inventory = () => {
       transition={{ duration: 0.8 }}
     >
       <Container mih={'80vh'} mt={'5vh'}>
-        <Title order={2} mb={"lg"} align="center">Lottery tickets</Title>
-
-        <ScratchCard
-          width={280}
-          height={140}
-          image={"/zone.jpg"}
-          finishPercent={60}
-          onComplete={() => {
-            setUserFound(true);
-          }}
-        >
-          <p>5€ Tax reduction</p>
-        </ScratchCard>
-
-        {userFound && <Text align="center">You found a 5€ tax reduction!</Text>}
+        <Title order={2} mb={"lg"} align="center">Inventory</Title>
 
       </Container>
     </motion.div>

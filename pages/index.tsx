@@ -56,8 +56,8 @@ export default function Home() {
               <Button
                 variant="light" color="green" fullWidth mt="md" radius="md"
                 onClick={() => {
-                  router.push("/personal")
-                  setActivePage("/personal")
+                  router.push("/driving")
+                  setActivePage("/driving")
                 }}
               >
                 Start driving 🚀
@@ -80,8 +80,8 @@ export default function Home() {
               <Button
                 variant="light" color="green" fullWidth mt="md" radius="md"
                 onClick={() => {
-                  router.push("/produktionsleitung")
-                  setActivePage("/produktionsleitung")
+                  router.push("/inventory")
+                  setActivePage("/inventory")
                 }}
               >
                 Check inventory 🏆
