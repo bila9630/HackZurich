@@ -11,7 +11,7 @@ const Inventory = () => {
       transition={{ duration: 0.8 }}
     >
       <Container mih={'80vh'} mt={'5vh'}>
-        <Title order={2} mb={"lg"} align="center">Hello World</Title>
+        <Title order={2} mb={"lg"} align="center">Lottery tickets</Title>
 
 
       </Container>
