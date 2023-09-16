@@ -139,8 +139,8 @@ export default function Home() {
               withBorder className={classes.card}
               sx={{ cursor: "pointer" }}
               onClick={() => {
-                router.push("/inventory")
-                setActivePage("/inventory")
+                router.push("/departure")
+                setActivePage("/departure")
               }}
             >
               <Card.Section>
@@ -173,7 +173,7 @@ export default function Home() {
               }}
             >
               <Card.Section>
-                <Lottie animationData={Ticket} loop={false} style={style} />
+                <Lottie animationData={Ticket} style={style} />
               </Card.Section>
 
               <Text pt={10} weight={500} align="center">Prize inventory</Text>

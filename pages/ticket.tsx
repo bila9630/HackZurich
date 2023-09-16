@@ -8,10 +8,6 @@ import {
 } from '@mantine/core';
 import ScratchArea from 'react-scratch-area';
 
-
-
-
-
 const Ticket = () => {
     const router = useRouter()
     const [disabled, setDisabled] = useState(true);
