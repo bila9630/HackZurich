@@ -17,7 +17,7 @@ const style = {
 const Driving = () => {
     const router = useRouter()
     const colors = ["green", "yellow", "red"];
-    const randomStatus = colors[Math.floor(Math.random() * colors.length)];
+    const randomStatus = "green";
 
     return (
         <motion.div

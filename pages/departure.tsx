@@ -5,7 +5,6 @@ import {
     Container, Title, TextInput,
     Space, Center, Button, Text
 } from '@mantine/core';
-import { useForm } from '@mantine/form';
 import { DatePicker, TimeInput } from '@mantine/dates';
 
 const Departure = () => {
