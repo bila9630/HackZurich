@@ -48,7 +48,7 @@ const Ticket = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
         >
-            <Container mih={'80vh'} mt={'5vh'}>
+            <Container mih={{ base: "62vh", sm: "80vh"}} mt={'5vh'}>
                 <Title order={2} mb={"lg"} align="center">You won a lottery ticket! 🎉</Title>
 
                 <Space h={40} />
