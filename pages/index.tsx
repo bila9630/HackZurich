@@ -7,11 +7,12 @@ import {
 } from '@mantine/core'
 import React, { useContext } from 'react'
 import { DatabaseContext } from "../contexts/DatabaseContext";
+import { useDisclosure } from '@mantine/hooks';
+import { useForm } from '@mantine/form';
 import Lottie from "lottie-react";
 import Car from "../public/car.json"
 import Ticket from "../public/ticket.json"
-import { useDisclosure } from '@mantine/hooks';
-import { useForm } from '@mantine/form';
+import Garage from "../public/garage.json"
 
 
 const style = {
@@ -103,8 +104,9 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4, ease: "easeIn" }}
       >
-        <Grid gutter={"xl"} gutterMd={110}>
-          <Grid.Col xs={12} md={6} lg={6}>
+        <Grid gutter={"xl"}>
+          {/* First one */}
+          <Grid.Col xs={12} md={6} lg={4}>
             <Card
               shadow="sm" p={1} radius="md"
               withBorder className={classes.card}
@@ -129,8 +131,38 @@ export default function Home() {
               </Button>
             </Card>
           </Grid.Col>
+        
+          {/* Second one */}
+          <Grid.Col xs={12} md={6} lg={4}>
+            <Card
+              shadow="sm" p={1} radius="md"
+              withBorder className={classes.card}
+              sx={{ cursor: "pointer" }}
+              onClick={() => {
+                router.push("/inventory")
+                setActivePage("/inventory")
+              }}
+            >
+              <Card.Section>
+                <Lottie animationData={Garage} style={style} />
+              </Card.Section>
 
-          <Grid.Col xs={12} md={6} lg={6}>
+              <Text pt={10} weight={500} align="center">Departure time</Text>
+
+              <Text size="sm" color="dimmed" align="center">
+                Calculate the perfect departure time for your journey
+              </Text>
+
+              <Button
+                variant="light" color="green" fullWidth mt="md" radius="md"
+              >
+                Calculate time ⏳
+              </Button>
+            </Card>
+          </Grid.Col>
+
+          {/* Third one */}
+          <Grid.Col xs={12} md={6} lg={4}>
             <Card
               shadow="sm" p={1} radius="md"
               withBorder className={classes.card}
