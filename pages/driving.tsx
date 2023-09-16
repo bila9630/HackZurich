@@ -2,12 +2,22 @@ import React from 'react'
 import { motion } from "framer-motion";
 import { useRouter } from 'next/router';
 import {
-    Container, Title, Button, Center
+    Container, Title, Button, Center, Space
 } from '@mantine/core'
+import { StatsRing } from '../components/StatsRing';
+import Lottie from "lottie-react";
+import Green from "../public/green.json";
+import Yellow from "../public/yellow.json";
+import Red from "../public/red.json";
+
+const style = {
+    height: 400,
+};
 
 const Driving = () => {
     const router = useRouter()
-
+    const colors = ["green", "yellow", "red"];
+    const randomStatus = colors[Math.floor(Math.random() * colors.length)];
 
     return (
         <motion.div
@@ -16,12 +26,37 @@ const Driving = () => {
             transition={{ duration: 0.8 }}
         >
 
-            <Container mih={"80vh"} mt={"5vh"}>
+            <StatsRing data={[
+                {
+                    "label": "Current driving speed",
+                    "stats": "45 km/h",
+                    "progress": 100,
+                    "color": "teal",
+                    "icon": "car"
+                },
+                {
+                    "label": "Speed limit",
+                    "stats": "130 km/h",
+                    "progress": 100,
+                    "color": "teal",
+                    "icon": "alert"
+                },
+            ]} />
+            <Container mih={"80vh"}>
+                <Space h={"xl"} />
+                <Center>
+                    {randomStatus == "green" && <Lottie animationData={Green} style={style} />}
+                    {randomStatus == "yellow" && <Lottie animationData={Yellow} style={style} />}
+                    {randomStatus == "red" && <Lottie animationData={Red} style={style} />}
+                </Center>
 
-                <Title order={2} mb={"lg"} align="center">Hello World</Title>
+                <Space h={"xl"} />
+
                 <Center>
                     <Button
                         color="green"
+                        size="lg"
+                        variant="outline"
                         onClick={() => {
                             router.push("/ticket")
                         }}
@@ -29,8 +64,11 @@ const Driving = () => {
                         Finish
                     </Button>
                 </Center>
+
+                <Space h={"5vh"} />
+
             </Container>
-        </motion.div>
+        </motion.div >
     )
 }
 
