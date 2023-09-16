@@ -14,14 +14,13 @@ const Ticket = () => {
     const [randomKey, setRandomKey] = useState('');
     const [randomValue, setRandomValue] = useState('');
 
-    const rewards = {
-        "vignette": "10% discount on vignette",
-        "coffee": "A free black coffee",
-        "carwash": "10% discount on your next carwash",
-        "fuel": "10% discount on your next tank refill"
-    }
-
     useEffect(() => {
+        const rewards = {
+            "vignette": "10% discount on vignette",
+            "coffee": "A free black coffee",
+            "carwash": "10% discount on your next carwash",
+            "fuel": "10% discount on your next tank refill"
+        }
         const rewardKeys = Object.keys(rewards);
         const randomIndex = Math.floor(Math.random() * rewardKeys.length);
         const randomKey = rewardKeys[randomIndex];

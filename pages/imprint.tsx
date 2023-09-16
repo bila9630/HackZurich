@@ -2,7 +2,7 @@ import { Container, Grid, Text, Title } from '@mantine/core'
 import { motion } from "framer-motion"
 import React from 'react'
 
-const Impressum = () => {
+const Imprint = () => {
   return (
     <Container mb={40}>
       <motion.div
@@ -25,7 +25,7 @@ const Impressum = () => {
         <Grid mb={30}>
           <Grid.Col xs={12} md={8}>
             <Text c={"dimmed"} fz="sm">
-              Impressum kommt noch
+              Imprint will be added soon.
             </Text>
           </Grid.Col>
         </Grid>
@@ -35,4 +35,4 @@ const Impressum = () => {
   )
 }
 
-export default Impressum
+export default Imprint

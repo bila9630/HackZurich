@@ -39,7 +39,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4, ease: "easeIn" }}
       >
-        <Grid gutter={"xl"} gutterMd={140}>
+        <Grid gutter={"xl"} gutterMd={110}>
           <Grid.Col xs={12} md={6} lg={6}>
             <Card shadow="sm" p={1} radius="md" withBorder>
               <Card.Section>

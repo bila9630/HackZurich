@@ -7,7 +7,7 @@ const Layout = ({ children }: any) => {
         <>
             <HeaderResponsive links={[{
                 link: "/",
-                label: "Homepage"
+                label: "Home"
             },
             {
                 link: "/driving",
@@ -21,8 +21,8 @@ const Layout = ({ children }: any) => {
             <main>{children}</main>
             <FooterSimple links={[
                 {
-                    "link": "/impressum",
-                    "label": "Impressum"
+                    "link": "/imprint",
+                    "label": "Imprint"
                 },
             ]} />
         </>
