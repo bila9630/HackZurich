@@ -25,9 +25,8 @@ const Departure = () => {
         },
 
         validate: {
-            // longer than 1 character and only letters
-            departure: (value) => value.trim().length < 1 || !/^[a-zA-ZäöüÄÖÜß\s]+$/.test(value),
-            destination: (value) => value.trim().length < 1 || !/^[a-zA-ZäöüÄÖÜß\s]+$/.test(value),
+            departure: (value) => value.trim().length < 1,
+            destination: (value) => value.trim().length < 1,
         },
     })
 
