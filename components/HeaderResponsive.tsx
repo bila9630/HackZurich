@@ -117,9 +117,9 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
                     }}
                 >
                     <Text component="span" c={"#00BF63"} inherit>
-                        Eco
+                        Car
                     </Text>
-                    Track
+                    Pool
                 </Text>
                 <Group spacing={5} className={classes.links}>
                     {items}

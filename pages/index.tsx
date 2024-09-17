@@ -3,17 +3,13 @@ import { useRouter } from 'next/router';
 import {
   Card, Container, Grid, Text, Title,
   Button, Space, createStyles, Modal,
-  Image, Center, TextInput
+  Center,
+
 } from '@mantine/core'
 import React, { useContext } from 'react'
 import { DatabaseContext } from "../contexts/DatabaseContext";
 import { useDisclosure } from '@mantine/hooks';
 import { useForm } from '@mantine/form';
-import Lottie from "lottie-react";
-import Car from "../public/car.json"
-import Ticket from "../public/ticket.json"
-import Garage from "../public/garage.json"
-
 
 const style = {
   height: 220,
@@ -56,144 +52,18 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <Title order={1} align="center" >Your commute, our{" "}
+        <Title order={1} align="center" >Our new{" "}
           <Text component="span" variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }}>
-            commitment
+            Slogan
           </Text>
         </Title>
 
-        {/* Modal part */}
-        <Modal opened={opened} onClose={close} title="Enter your destination" centered>
-          {/* Form */}
-          <form onSubmit={form.onSubmit(async (values) => {
-            router.push("/driving")
-            setActivePage("/driving")
-          })}>
-
-            <TextInput
-              label="Departure Point"
-              placeholder="Your current location"
-              withAsterisk
-              {...form.getInputProps("start")}
-            />
-            <Space h="sm" />
-
-            <TextInput
-              label="Destination Point"
-              placeholder="Your Destination"
-              withAsterisk
-              {...form.getInputProps("destination")}
-            />
-            <Space h="xl" />
-
-            <Center>
-              <Button type="submit">
-                Lets drive
-              </Button>
-            </Center>
-
-          </form>
-        </Modal>
+        <Space h="lg" />
+        <Center>
+          <Button onClick={() => { router.push("/ticket") }}>Next</Button>
+        </Center>
 
       </motion.div>
-
-      <Space h={70} />
-
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4, ease: "easeIn" }}
-      >
-        <Grid gutter={"xl"}>
-          {/* First one */}
-          <Grid.Col xs={12} md={6} lg={4}>
-            <Card
-              shadow="sm" p={1} radius="md"
-              withBorder className={classes.card}
-              sx={{ cursor: "pointer" }}
-              onClick={open}
-            >
-              <Card.Section>
-                {/* Lottie file */}
-                <Lottie animationData={Car} style={style} />
-              </Card.Section>
-
-              <Text pt={10} weight={500} align="center">Start driving</Text>
-
-              <Text size="sm" color="dimmed" align="center">
-                Start your journey and help us prevent traffic congestion
-              </Text>
-
-              <Button
-                variant="light" color="green" fullWidth mt="md" radius="md"
-              >
-                Start driving 🚀
-              </Button>
-            </Card>
-          </Grid.Col>
-        
-          {/* Second one */}
-          <Grid.Col xs={12} md={6} lg={4}>
-            <Card
-              shadow="sm" p={1} radius="md"
-              withBorder className={classes.card}
-              sx={{ cursor: "pointer" }}
-              onClick={() => {
-                router.push("/departure")
-                setActivePage("/departure")
-              }}
-            >
-              <Card.Section>
-                <Lottie animationData={Garage} style={style} />
-              </Card.Section>
-
-              <Text pt={10} weight={500} align="center">Departure time</Text>
-
-              <Text size="sm" color="dimmed" align="center">
-                Calculate the perfect departure time for your journey
-              </Text>
-
-              <Button
-                variant="light" color="green" fullWidth mt="md" radius="md"
-              >
-                Calculate time ⏳
-              </Button>
-            </Card>
-          </Grid.Col>
-
-          {/* Third one */}
-          <Grid.Col xs={12} md={6} lg={4}>
-            <Card
-              shadow="sm" p={1} radius="md"
-              withBorder className={classes.card}
-              sx={{ cursor: "pointer" }}
-              onClick={() => {
-                router.push("/inventory")
-                setActivePage("/inventory")
-              }}
-            >
-              <Card.Section>
-                <Lottie animationData={Ticket} style={style} />
-              </Card.Section>
-
-              <Text pt={10} weight={500} align="center">Prize inventory</Text>
-
-              <Text size="sm" color="dimmed" align="center">
-                See all your prizes and get more information about them
-              </Text>
-
-              <Button
-                variant="light" color="green" fullWidth mt="md" radius="md"
-              >
-                Check inventory 🏆
-              </Button>
-            </Card>
-          </Grid.Col>
-
-        </Grid>
-      </motion.div>
-
-
     </Container>
   );
 }

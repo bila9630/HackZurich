@@ -10,12 +10,12 @@ const Layout = ({ children }: any) => {
                 label: "Home"
             },
             {
-                link: "/driving",
-                label: "Driving"
+                link: "/rewards",
+                label: "Rewards"
             },
             {
-                link: "/inventory",
-                label: "Inventory"
+                link: "/profile",
+                label: "Profile"
             }
             ]} />
             <main>{children}</main>

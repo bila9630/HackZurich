@@ -21,18 +21,6 @@ const mockdata = [
   {
     title: '10% discount on your next tank refill',
     image: 'fuel.png',
-  },
-  {
-    title: '10% discount on vignette',
-    image: 'vignette.png',
-  },
-  {
-    title: 'A free black coffee',
-    image: 'coffee.png',
-  },
-  {
-    title: '5% discount on your next tank refill',
-    image: 'fuel.png',
   }
 ];
 
@@ -52,7 +40,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const Inventory = () => {
+const Rewards = () => {
   const { classes } = useStyles();
   const [opened, { open, close }] = useDisclosure(false);
 
@@ -97,7 +85,7 @@ const Inventory = () => {
         {/* Modal part */}
         <Modal opened={opened} onClose={close} title="Your prize" centered>
           <Image src={"rickroll.png"} alt="qr code to redeem prize" height={300} fit={"contain"} />
-          <Space h={"md"}/>
+          <Space h={"md"} />
           <Center>
             <Text c={"dimmed"}>Code: 3FW23DH</Text>
           </Center>
@@ -113,4 +101,4 @@ const Inventory = () => {
   );
 };
 
-export default Inventory;
+export default Rewards;
