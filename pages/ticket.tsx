@@ -24,6 +24,7 @@ const Ticket = () => {
 
     useEffect(() => {
         const rewards = {
+            "vignette": "10% discount on vignette",
             "coffee": "A free black coffee",
             "carwash": "10% discount on your next carwash",
             "fuel": "10% discount on your next tank refill"
@@ -43,7 +44,7 @@ const Ticket = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
         >
-            <Container mih={{ base: "62vh", sm: "80vh" }} mt={'5vh'}>
+            <Container mih={{ base: "62vh", sm: "80vh"}} mt={'5vh'}>
                 <Title order={2} mb={"lg"} align="center">You won a lottery ticket! 🎉</Title>
 
                 <Space h={40} />
